@@ -47,14 +47,14 @@ def estimator(data):
     best_case_cases_for_ventilators_by_request_time = (2 / 100) * best_case_infections_by_requested_time
     worst_case_cases_for_ventilators_by_request_time = (2 / 100) * worst_case_infections_by_requested_time
 
-    avg_daily_income_population = data.get("avgDailyIncomePopulation", 0)
-    avg_daily_income_in_usd = data.get("avgDailyIncomeInUSD", 0)
+    avg_daily_income_population = data.get("region").get("avgDailyIncomePopulation")
+    print(avg_daily_income_population)
+    avg_daily_income_in_usd = data.get("region").get("avgDailyIncomeInUSD")
+    print(avg_daily_income_in_usd)
 
-    best_case_dollars_in_flight = int(best_case_infections_by_requested_time *
-                                      avg_daily_income_population * avg_daily_income_in_usd * days)
+    best_case_dollars_in_flight = best_case_infections_by_requested_time * avg_daily_income_population * avg_daily_income_in_usd * days
 
-    worst_case_dollars_in_flight = int(worst_case_infections_by_requested_time *
-                                       avg_daily_income_population * avg_daily_income_in_usd * days)
+    worst_case_dollars_in_flight = worst_case_infections_by_requested_time * avg_daily_income_population * avg_daily_income_in_usd * days
 
     output = {"data": data,
 
@@ -64,7 +64,7 @@ def estimator(data):
                          "hospitalBedsByRequestedTime": int(best_case_hospital_beds_by_requested_time),
                          "casesForICUByRequestedTime": int(best_case_cases_for_icu_by_request_time),
                          "casesForVentilatorsByRequestedTime": int(best_case_cases_for_ventilators_by_request_time),
-                         "dollarsInFlight": best_case_dollars_in_flight},
+                         "dollarsInFlight": int(best_case_dollars_in_flight)},
 
               "severeImpact": {"currentlyInfected": int(worst_case_currently_infected),
                                "infectionsByRequestedTime": int(worst_case_infections_by_requested_time),
@@ -72,7 +72,7 @@ def estimator(data):
                                "hospitalBedsByRequestedTime": int(worst_case_hospital_beds_by_requested_time),
                                "casesForICUByRequestedTime": int(worst_case_cases_for_icu_by_request_time),
                                "casesForVentilatorsByRequestedTime": int(worst_case_cases_for_ventilators_by_request_time),
-                               "dollarsInFlight": worst_case_dollars_in_flight}
+                               "dollarsInFlight": int(worst_case_dollars_in_flight)}
               }
     # json_output = json.dumps(output)
 
