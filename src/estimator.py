@@ -63,7 +63,7 @@ def estimator(data):
                          "severeCasesByRequestedTime": int(best_case_severe_cases_by_requested_time),
                          "hospitalBedsByRequestedTime": int(best_case_hospital_beds_by_requested_time),
                          "casesForICUByRequestedTime": int(best_case_cases_for_icu_by_request_time),
-                         "casesForVentilatorsByRequestedTime": best_case_cases_for_ventilators_by_request_time,
+                         "casesForVentilatorsByRequestedTime": int(best_case_cases_for_ventilators_by_request_time),
                          "dollarsInFlight": best_case_dollars_in_flight},
 
               "severeImpact": {"currentlyInfected": int(worst_case_currently_infected),
