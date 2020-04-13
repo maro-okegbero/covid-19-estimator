@@ -58,21 +58,21 @@ def estimator(data):
 
     output = {"data": data,
 
-              "impact": {"currentlyInfected": best_case_currently_infected,
-                         "infectionsByRequestedTime": best_case_severe_cases_by_requested_time,
-                         "severeCasesByRequestedTime": best_case_severe_cases_by_requested_time,
-                         "hospitalBedsByRequestedTime": best_case_hospital_beds_by_requested_time,
-                         "casesForICUByRequestedTime": best_case_cases_for_icu_by_request_time,
-                         "casesForVentilatorsByRequestedTime": best_case_cases_for_ventilators_by_request_time,
-                         "dollarsInFlight": best_case_dollars_in_flight},
+              "impact": {"currentlyInfected": int(best_case_currently_infected),
+                         "infectionsByRequestedTime": int(best_case_infections_by_requested_time),
+                         "severeCasesByRequestedTime": int(best_case_severe_cases_by_requested_time),
+                         "hospitalBedsByRequestedTime": int(best_case_hospital_beds_by_requested_time),
+                         "casesForICUByRequestedTime": int(best_case_cases_for_icu_by_request_time),
+                         "casesForVentilatorsByRequestedTime": int(best_case_cases_for_ventilators_by_request_time),
+                         "dollarsInFlight": int(best_case_dollars_in_flight)},
 
-              "severeImpact": {"currentlyInfected": worst_case_currently_infected,
-                               "infectionsByRequestedTime": worst_case_severe_cases_by_requested_time,
-                               "severeCasesByRequestedTime": worst_case_severe_cases_by_requested_time,
-                               "hospitalBedsByRequestedTime": worst_case_hospital_beds_by_requested_time,
-                               "casesForICUByRequestedTime": worst_case_cases_for_icu_by_request_time,
-                               "casesForVentilatorsByRequestedTime": worst_case_cases_for_ventilators_by_request_time,
-                               "dollarsInFlight": worst_case_dollars_in_flight}
+              "severeImpact": {"currentlyInfected": int(worst_case_currently_infected),
+                               "infectionsByRequestedTime": int(best_case_infections_by_requested_time),
+                               "severeCasesByRequestedTime": int(worst_case_severe_cases_by_requested_time),
+                               "hospitalBedsByRequestedTime": int(worst_case_hospital_beds_by_requested_time),
+                               "casesForICUByRequestedTime": int(worst_case_cases_for_icu_by_request_time),
+                               "casesForVentilatorsByRequestedTime": int(worst_case_cases_for_ventilators_by_request_time),
+                               "dollarsInFlight": int(worst_case_dollars_in_flight)}
               }
     json_output = json.dumps(output)
 
