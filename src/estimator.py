@@ -67,7 +67,7 @@ def estimator(data):
                          "dollarsInFlight": int(best_case_dollars_in_flight)},
 
               "severeImpact": {"currentlyInfected": int(worst_case_currently_infected),
-                               "infectionsByRequestedTime": int(best_case_infections_by_requested_time),
+                               "infectionsByRequestedTime": int(worst_case_infections_by_requested_time),
                                "severeCasesByRequestedTime": int(worst_case_severe_cases_by_requested_time),
                                "hospitalBedsByRequestedTime": int(worst_case_hospital_beds_by_requested_time),
                                "casesForICUByRequestedTime": int(worst_case_cases_for_icu_by_request_time),
@@ -76,4 +76,4 @@ def estimator(data):
               }
     json_output = json.dumps(output)
 
-    return json_output
+    return output
