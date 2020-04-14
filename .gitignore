@@ -20,3 +20,14 @@ src/__pycache__
 
 # when you use pytest editable
 covid19_estimator_py.egg-info/
+
+*.pyc
+*~
+__pycache__
+newvenv
+db.sqlite3
+/static
+.DS_Store
+local_settings.py
+.psql_history
+.env
