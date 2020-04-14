@@ -52,9 +52,9 @@ def estimator(data):
     avg_daily_income_in_usd = data.get("region").get("avgDailyIncomeInUSD")
     print(avg_daily_income_in_usd)
 
-    best_case_dollars_in_flight = best_case_infections_by_requested_time * avg_daily_income_population * avg_daily_income_in_usd * days
+    best_case_dollars_in_flight = (best_case_infections_by_requested_time * avg_daily_income_population * avg_daily_income_in_usd) / days
 
-    worst_case_dollars_in_flight = worst_case_infections_by_requested_time * avg_daily_income_population * avg_daily_income_in_usd * days
+    worst_case_dollars_in_flight = (worst_case_infections_by_requested_time * avg_daily_income_population * avg_daily_income_in_usd) / days
 
     output = {"data": data,
 
