@@ -1,1 +1,1 @@
-web: python manage.py runserver
+wweb: gunicorn buid_for_sdg.wsgi --log-file -
