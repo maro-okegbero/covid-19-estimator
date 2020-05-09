@@ -1,1 +1,1 @@
-wweb: gunicorn buid_for_sdg.wsgi --log-file -
+web: gunicorn buid_for_sdg.wsgi --log-file -
